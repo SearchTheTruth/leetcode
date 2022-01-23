@@ -5,6 +5,7 @@
 using namespace std;
 
 int merge(int *beg, int *mid, int *ed);
+int littleSum = 0;
 
 int process(int *beg, int *ed)
 {
@@ -26,10 +27,14 @@ int merge(int *beg, int *mid, int *ed)
     int *rp = mid + 1;
 
     while (lp <= mid && rp <= ed) {
-        if (*lp <= *rp)
-            *hp++ = *lp++;
-        else
+        if (*lp == *rp) {
             *hp++ = *rp++;
+        } else if (*lp < *rp) {
+            littleSum += *lp * (ed - rp + 1);
+            *hp++ = *lp++;
+        } else if (*lp > *rp) {
+            *hp++ = *rp++;
+        }
     }
 
     while (lp <= mid)
@@ -57,5 +62,5 @@ int main()
 
     for (auto num : arr)
         cout << num << endl;
-    cout << endl;
+    cout << "littleSum = " << littleSum << endl;
 }
