@@ -8,6 +8,7 @@
 #include <set>
 #include <map>
 #include <memory>
+#include <unordered_set>
 
 class Node;
 

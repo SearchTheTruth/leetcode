@@ -25,7 +25,6 @@ Node *buildTemplateGraphic(set<Edge> &edgSet)
     edgSet.insert(*linkto(8, head_3, head_6));
     edgSet.insert(*linkto(1, head_4, head_6));
     edgSet.insert(*linkto(9, head_4, head_7));
-    edgSet.insert(*linkto(2, head_4, head_5));
 
     return head_1;
 }
