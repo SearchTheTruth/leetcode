@@ -78,24 +78,15 @@ set<Edge> primMst(Node *head)
     nodeSet.insert(head);
 
     while (!priQue.empty()) {
-        cout << "+++++++++++++++++++++++++++++++" << endl;
-        dumpNodeSet(nodeSet);
         const Edge edge = priQue.top();
-        cout << "get the min edge from pri que" << endl;
-        dumpEdge(edge);
         priQue.pop();
         if (isHasRing(edge.to, nodeSet) && isHasRing(edge.from, nodeSet))   //to或from都会构成环，所以这条边不能使用
             continue;
         fillNodeEdgeIntoPriQue(edge.to, priQue, edgeSet);      //将新增点的边加入到优先队列
         fillNodeEdgeIntoPriQue(edge.from, priQue, edgeSet);
-        cout << "insert to" << endl;
         nodeSet.insert(edge.to);
-        dumpNodeSet(nodeSet);
-        cout << "insert from" << endl;
         nodeSet.insert(edge.from);
-        dumpNodeSet(nodeSet);
         result.insert(edge);
-        dumpResult(result);
     }
     return result;
 }
@@ -114,7 +105,6 @@ int main()
 
     set<Edge> mst = primMst(head);
 
-    cout << "end +++++++++++++++++++++++++++++++" << endl;
     for(auto &it : mst) {
         dumpEdge(it);
     }
