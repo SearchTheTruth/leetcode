@@ -6,8 +6,10 @@
 #include <queue>
 #include <iostream>
 #include <set>
-#include <unordered_map>
 #include <map>
+#include <algorithm>
+#include <unordered_map>
+#include <unordered_set>
 
 class Node;
 
@@ -29,6 +31,11 @@ bool operator<(const Edge &l, const Edge &r)
 bool operator>(const Edge &l, const Edge &r)
 {
 	return l.weight > r.weight;
+}
+
+bool operator>(const Node &l, const Node &r)
+{
+	return true;
 }
 
 class Node {
