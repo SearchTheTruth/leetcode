@@ -34,8 +34,8 @@ void PathNode::insertString(const string &str)
             cur->nexts.insert({ch, next});
             cur = next;
         } else {
-            cur->passCnt++;
             cur = cur->nexts[ch];                        //path exist, passcnt++, 继续向下处理下一个字母
+            cur->passCnt++;
         }
     }
     cur->endCnt++;
