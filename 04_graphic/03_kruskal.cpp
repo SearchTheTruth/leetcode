@@ -7,7 +7,7 @@ void dumpEdge(const Edge &edge)
     cout << edge.to->value << " -- " << edge.from->value << " : " << edge.weight << endl;
 }
 
-Node *buildTemplateGraphic(set<Edge> &edgSet)
+Node *buildTemplateGraphic(set<Edge, greater<Edge>> &edgSet)
 {
     Node *head_1 = new Node(1);   //a
     Node *head_2 = new Node(2);   //b
