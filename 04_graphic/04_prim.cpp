@@ -28,7 +28,7 @@ void dumpEdge(const Edge &edge)
     cout << edge.to->value << " -- " << edge.from->value << " : " << edge.weight << endl;
 }
 
-using PriorityQueue = priority_queue<Edge, vector<Edge>, greater<Edge>>;
+using PriorityQueue = priority_queue<Edge, vector<Edge>, greater<Edge>>;   //升序排列
 //using PriorityQueue = priority_queue<Edge>;
 
 void fillNodeEdgeIntoPriQue(Node *head, PriorityQueue &priQue, unordered_set<Edge *> &edgeSet)
