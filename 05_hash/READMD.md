@@ -1,0 +1,1 @@
+01_random_pool.cpp   以O(1) 时间复杂度插入，删除key，且无重复key.能随机从中获取一个key
