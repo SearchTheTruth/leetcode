@@ -44,7 +44,7 @@ int UnionFindSet<Element>::isSameSet(Element a, Element b)
         return false;
     }
 
-    return fatherMap[a] == fatherMap[b];
+    return findEleFather(a) == findEleFather(b);
 }
 
 template<typename Element>

@@ -38,7 +38,7 @@ void printkAddr(vector<shared_ptr<int>> &a)
 }
 
 using NodeSet = vector<Node *>;
-map<Node *, shared_ptr<NodeSet>> combindSet;     //用int的内存地址来表示集合，地址相同则Node处于同一集合中
+map<Node *, shared_ptr<NodeSet>> combindSet;     //用vector<Node *>维护一张集合表，同一集合Node都列在该表中
 
 void merge(Node *to, Node *from)
 {   

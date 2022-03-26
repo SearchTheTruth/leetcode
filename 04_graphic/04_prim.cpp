@@ -31,6 +31,7 @@ void dumpEdge(const Edge &edge)
 using PriorityQueue = priority_queue<Edge, vector<Edge>, greater<Edge>>;   //升序排列
 //using PriorityQueue = priority_queue<Edge>;
 
+//将head所有未加入过优先级队列的边放入优先级队列
 void fillNodeEdgeIntoPriQue(Node *head, PriorityQueue &priQue, unordered_set<Edge *> &edgeSet)
 {
     //已经记录的边不重复放入队列中
@@ -70,8 +71,8 @@ void dumpResult(set<Edge> result)
 
 set<Edge> primMst(Node *head)
 {
-    unordered_set<Node *> nodeSet;
-    unordered_set<Edge *> edgeSet;
+    unordered_set<Node *> nodeSet;          //用来记录已经处理的点，防止形成环
+    unordered_set<Edge *> edgeSet;          //用来记录已经加入优先级队列的边，防止重复加入
     set<Edge> result;
     PriorityQueue priQue;
     fillNodeEdgeIntoPriQue(head, priQue, edgeSet);

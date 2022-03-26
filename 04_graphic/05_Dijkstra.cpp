@@ -48,8 +48,8 @@ Node *getMinUnlockNode(unordered_map<Node *, int> &distanceMap, unordered_set<No
 
 unordered_map<Node *, int> dijkstra(Node *head)
 {
-    unordered_map<Node *, int> distanceMap;
-    unordered_set<Node *> lockNode;
+    unordered_map<Node *, int> distanceMap;     //记录从head出发到各点的距离<目标点，head到目标点的距离>
+    unordered_set<Node *> lockNode;             //记录已经锁住的点
     Node *minNode;
 
     distanceMap.insert({head, 0});
